@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+TAGS: 
+
+- table
+- column
+
+
+ATTRIBUTES:
+
+- generate - Attribute with multiple json values, 
+values are: {pojo:true,dao:true,entity:true,activity:true,adapter:true}
+- tablename - Name of Entity
+- colname - Name of Entity Attribute
+- type - Type of Attribute
+- length - Length of Attribute
+- autoincrement - Attribute Property
+- primarykey - Attribute Property
+- visible - Attribute Property
+- displaytext - Attribute Property
+- hint - Attribute Component (EditText) Hint
+- labelpos - Position of label (left,right,top,button)
+- labelsize - Default is wrapped
+- componenttype - Attribute Property (Component Type)
+- static - Attribute Property for ListView or Spinner
+- values - Attribute Property
+- value - Attribute Property Single Value
+*****************
+if visible == true
+{beside editview, label is created with displaytext if is not empty}
+if labelpos == null
+{labelpos="left"}
+if static == true
+(Values are not inserted into db otherwise they are inserted and they are readed from db)
+*****************
+
+
+
+COMPONENTS:
+
+- TextView
+- EditText
+- ListView
+- RadioGroup
+- RadioButton
+- CheckBox
+- Spinner
+- Button
+
+
+GENERATED PROJECT PACKAGE STRUCTURE UNDER SRC:
+com.tag:name->attr:appname.activity
+com.tag:name->attr:appname.services
+com.tag:name->attr:appname.entity
+com.tag:name->attr:appname.collectors
+
+-->
+<name appname="testapi">
+	<table tablename="userstable">
+		<column colid="0" colname="_id" type="int" length="11" autoincrement="true" primarykey="true" visible="false" displaytext="" hint="" labelpos="" labelsize=""></column>	
+		<column colid="1" colname="fullname" type="varchar" length="120" visible="true" displaytext="Full Name" hint="Full Name" labelpos="left" labelsize=""></column>	
+		<column colid="2" colname="address" type="varchar" length="120" visible="true" displaytext="Address" hint="Address" labelpos="left" labelsize=""></column>	
+		<column colid="3" colname="tel" type="varchar" length="40" visible="true" displaytext="Phone" hint="Phone" labelpos="left" labelsize=""></column>	
+		<column colid="4" colname="accesslevel" type="boolean" length="1" visible="true" displaytext="" hint="" labelpos="left" labelsize="" componenttype="RadioGroup" values="{active,passive}"></column>	
+	</table>
+	<table tablename="clienttable" labelpos="" labelsize="">
+		<column colid="0" colname="_id" type="int" length="11" autoincrement="true" primarykey="true" visible="false" displaytext="" hint="" labelpos="left" labelsize=""></column>	
+		<column colid="1" colname="fullname" type="varchar" length="120" visible="true" displaytext="Full Name" hint="Full Name" labelpos="left" labelsize=""></column>	
+		<column colid="2" colname="address" type="varchar" length="120" visible="true" displaytext="Address" hint="Address" labelpos="left" labelsize=""></column>	
+		<column colid="3" colname="companyname" type="varchar" length="80" visible="true" displaytext="Company Name" hint="Company Name" labelpos="left" labelsize=""></column>	
+		<column colid="4" colname="tel" type="varchar" length="40" visible="true" displaytext="Phone" hint="Phone" labelpos="left" labelsize=""></column>	
+	</table>
+	<table tablename="producttable" labelpos="" labelsize="">
+		<column colid="0" colname="_id" type="int" length="11" autoincrement="true" primarykey="true" visible="false" displaytext="" hint="" labelpos="left" labelsize=""></column>	
+		<column colid="1" colname="name" type="varchar" length="120" visible="true" displaytext="Name" hint="Name" labelpos="left" labelsize=""></column>	
+		<column colid="2" colname="vendor" type="varchar" length="80" visible="true" displaytext="Vendor" hint="Vendor" labelpos="left" labelsize=""></column>	
+		<column colid="3" colname="size" type="int" length="11" visible="true" displaytext="Size" hint="Size" labelpos="left" labelsize=""></column>	
+		<column colid="4" colname="price" type="varchar" length="10" visible="true" displaytext="Price" hint="Price" labelpos="left" labelsize=""></column>	
+	</table>
+</name>
