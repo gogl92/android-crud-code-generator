@@ -21,9 +21,18 @@ public class AndroidCrudGenerator {
 				
 	public static void main(String[] args) {
 		// play.parseAndPlay(new File(args[0]));		
-		modelObjectList = GeneratorUtil.parseAndGenerateObjects(new File("testbase.xml"));
-		GeneratorUtil.generateEntityClasses(modelObjectList);
-		GeneratorUtil.generateDBHelperClasses(modelObjectList);
-		GeneratorUtil.generateDaoClasses(modelObjectList);		
+		if (args.length == 1) {
+			File inFile = new File(args[0]);
+			if (inFile.exists()) {
+				modelObjectList = GeneratorUtil.parseAndGenerateObjects(inFile);
+				GeneratorUtil.generateEntityClasses(modelObjectList);
+				GeneratorUtil.generateDBHelperClasses(modelObjectList);
+				GeneratorUtil.generateDaoClasses(modelObjectList);		
+			} else {
+				System.out.println("Android CRUD Generator v1.0\nUsage: java -jar androidcrudgenerator.jar model.xml");
+			}
+		} else {
+			System.out.println("Android Crud Generator v1.0\nUsage: java -jar androidcrudgenerator.jar model.xml");
+		}
 	}	
 }
